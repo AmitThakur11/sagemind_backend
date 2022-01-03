@@ -8,7 +8,7 @@ app.use(cors());
 app.get("/",(req,res)=>{
     res.status(200).send("working")
 })
-const port = process.env.PORT | 5000
+const port = process.env.PORT || 5000
 app.get("/quiz",(req,res)=>{
     try{
         res.status(200).json({success : true , data : quiz})
