@@ -3,6 +3,7 @@ const cors = require('cors')
 const {quizes}= require("./quizData")
 const dbConnect = require("./dbConnect")
 const verification = require("./middleware/tokenVerify")
+const authRoute = require("./routes/auth")
 const app = express();
 
 
@@ -26,7 +27,7 @@ app.get("/quiz",(req,res)=>{
     }
 })
 
-
+app.use("/auth", authRoute)
 app.use(verification())
 
 
