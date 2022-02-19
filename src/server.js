@@ -2,7 +2,9 @@ const express = require('express');
 const cors = require('cors')
 const {quizes}= require("./quizData")
 const dbConnect = require("./dbConnect")
+const verification = require("./middleware/tokenVerify")
 const app = express();
+
 
 app.use(cors());
 app.use(express.json())
@@ -23,5 +25,9 @@ app.get("/quiz",(req,res)=>{
         res.status(500).json({success : false})
     }
 })
+
+
+app.use(verification())
+
 
 app.listen(port,()=>console.log("server running"))
