@@ -20,7 +20,8 @@ const userSchema = new Schema({
     },
     quizData : {
         type : Schema.Types.ObjectId,
-        ref : "QuizData"
+        ref : "QuizData",
+        default : []
         
     }
 
