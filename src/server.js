@@ -4,6 +4,7 @@ const {quizes}= require("./quizData")
 const dbConnect = require("./dbConnect")
 const verifyUser = require("./middleware/tokenVerify")
 const authRoute = require("./routes/auth")
+const quizDataRoute = require("./routes/quizData")
 const app = express();
 
 
@@ -27,7 +28,8 @@ app.get("/quiz",(req,res)=>{
     }
 })
 
-app.use("/auth", authRoute)
+app.use("/auth", authRoute);
+app.use("/quiz",quizDataRoute)
 app.use(verifyUser)
 
 
