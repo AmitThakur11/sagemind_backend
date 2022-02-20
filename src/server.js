@@ -28,9 +28,10 @@ app.get("/quiz",(req,res)=>{
     }
 })
 
+
 app.use("/auth", authRoute);
-app.use("/quiz",quizDataRoute)
 app.use(verifyUser)
+app.use("/quiz",quizDataRoute)
 
 
 app.listen(port,()=>console.log("server running"))

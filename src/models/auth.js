@@ -18,14 +18,12 @@ const userSchema = new Schema({
         }
 
     },
-    quizData : {
+    quizResults : [{
         type : Schema.Types.ObjectId,
-        ref : "QuizData",
-        default : []
+        ref : "Result"
         
     }
-
-},{
+]},{
     timestamps: true
 })
 
