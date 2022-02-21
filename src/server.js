@@ -20,14 +20,7 @@ dbConnect();
 app.get("/",(req,res)=>{
     res.status(200).send("working")
 })
-const port = process.env.PORT || 3002
-app.get("/quiz",(req,res)=>{
-    try{
-        res.status(200).json({success : true , quizes : quizes})
-    }catch{
-        res.status(500).json({success : false})
-    }
-})
+const port = process.env.PORT || 5000
 
 app.get("/quiz",getQuiz)
 
