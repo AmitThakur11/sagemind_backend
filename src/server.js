@@ -4,7 +4,8 @@ const {quizes}= require("./quizData")
 const dbConnect = require("./dbConnect")
 const verifyUser = require("./middleware/tokenVerify")
 const authRoute = require("./routes/auth")
-const quizDataRoute = require("./routes/quizData")
+const quizDataRoute = require("./routes/quizData");
+const { getQuiz } = require('./controller/quizData');
 const app = express();
 
 
@@ -28,10 +29,13 @@ app.get("/quiz",(req,res)=>{
     }
 })
 
+app.get("/quiz",getQuiz)
 
 app.use("/auth", authRoute);
 app.use(verifyUser)
 app.use("/quiz",quizDataRoute)
+app.use(verifyUser)
+
 
 
 app.listen(port,()=>console.log("server running"))

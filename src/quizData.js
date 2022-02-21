@@ -328,19 +328,19 @@ const quizes = {
         }
       ]
       
-    }],
-    rules : [
-        "Each question carry equal weightage.",
-        "There is no negative marking.",
-        "Candidate will get  4 options for each question and have to pick the right one.",
-        "If the candidate open another tab or reload the page the test will be  cancel",
-        "For each question you have 15 seconds.",
-        "All the best"
-      
-      ]
+    }]
+    
   
 };
   
+const rules = [
+  "Each question carry equal weightage.",
+  "There is no negative marking.",
+  "Candidate will get  4 options for each question and have to pick the right one.",
+  "If the candidate open another tab or reload the page the test will be  cancel",
+  "For each question you have 15 seconds.",
+  "All the best"
 
-  module.exports = {quizes}
+]
+  module.exports = {quizes,rules}
   

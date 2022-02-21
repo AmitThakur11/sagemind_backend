@@ -52,6 +52,7 @@ const login = async(req,res)=>{
         const token = jwt.sign({_id : isExist._id}, process.env.JWT_SECRET_KEY);
         
         let userValue = {
+            _id : isExist._id,
             username : isExist.username,
             email : isExist.email,
             
